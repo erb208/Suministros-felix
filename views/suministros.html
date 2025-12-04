@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SUMINISTROS FELIX</title>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR fija -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../img/logo.png" alt="Logo SUMINISTROS FELIX" width="55" height="55" class="me-2">
+        SUMINISTROS FELIX
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="suministros.html">SUMINISTROS</a></li>
+          <li class="nav-item"><a class="nav-link" href="presupuesto.html">PRESUPUESTO</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+        </ul>
+
+        <!-- Buscador -->
+        <form id="navSearchForm" class="d-flex ms-lg-3" role="search">
+          <input id="navSearchInput" class="form-control me-2" type="search" placeholder="BUSCAR" aria-label="BUSCAR">
+          <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cabecera -->
+  <header class="py-5 bg-light">
+    <div class="container">
+      <h1 class="display-6 fw-bold mb-2">Galería</h1>
+      <p class="text-muted mb-0">Imágenes de productos y soluciones instaladas.</p>
+    </div>
+  </header>
+
+  <!-- Filtros -->
+  <section class="py-4 border-bottom">
+    <h2 class="visually-hidden">Filtro de categorías</h2>
+
+    <div class="container d-flex flex-wrap gap-2">
+      <button class="btn btn-outline-primary filter-btn active" data-filter="*">Todo</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="Limpieza">Limpieza</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="Papelería">Papelería</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="Dispensadores">Dispensadores</button>
+      <button class="btn btn-outline-primary filter-btn" data-filter="Otros">Otros</button>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <main class="py-5">
+    <div class="container">
+      <div id="galeriaGrid" class="row g-4"></div>
+      <p id="galeriaEstado" class="text-center text-muted d-none">Cargando galería…</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer py-4">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h5 class="footer-title">Suministros Félix</h5>
+          <p class="footer-text">Suministros para hostelería y limpieza en Bilbao.</p>
+          <p class="mb-1">📍 Polígono Industrial Sangroniz, C/Iberre Bloque 10 - Nave 10</p>
+          <p class="mb-1">📞 <a class="footer-link" href="tel:+34655724482">+34 655 724 482</a> ·
+            <a class="footer-link" href="tel:+34944710281">94 471 0281</a></p>
+          <p class="mb-1">✉️ <a class="footer-link" href="mailto:info@suministrosfelix.com">info@suministrosfelix.com</a></p>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column align-items-md-end align-items-center">
+          <h5 class="footer-title">Síguenos en nuestras redes</h5>
+          <div class="d-flex gap-3 mt-3">
+            <a href="https://facebook.com" target="_blank"><img src="../img/facebook.png" alt="Facebook"
+                class="footer-social"></a>
+            <a href="https://instagram.com" target="_blank"><img src="../img/instagram.png" alt="Instagram"
+                class="footer-social"></a>
+            <a href="https://wa.me/34655724482" target="_blank"><img src="../img/whatsapp.png" alt="WhatsApp"
+                class="footer-social"></a>
+            <a href="https://tiktok.com" target="_blank"><img src="../img/tiktok.png" alt="Tiktok"
+                class="footer-social"></a>
+            <a href="https://gmail.com" target="_blank"><img src="../img/email.png" alt="Email"
+                class="footer-social"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <small class="footer-copy">© 2025 Suministros Félix — Todos los derechos reservados</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"></script>
+
+  <script src="../js/active-nav.js"></script>
+  <script src="../js/nav-search.js"></script>
+  <script src="../js/galeria-lightbox.js"></script>
+</body>
+
+</html>

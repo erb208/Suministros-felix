@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "titulo": "Nueva línea ecológica para hostelería",
+      "resumen": "Detergentes biodegradables certificados para cocina y sala.",
+      "fecha": "2025-10-10",
+      "enlace": "https://ejemplo.com/noticia-ecologica",
+      "imagen": "https://picsum.photos/seed/eco/600/400"
+    },
+    {
+      "id": 2,
+      "titulo": "Promoción en celulosa industrial",
+      "resumen": "Hasta un 15% de descuento en bobinas y servilletas.",
+      "fecha": "2025-10-05",
+      "enlace": "https://ejemplo.com/promo-celulosa",
+      "imagen": "https://picsum.photos/seed/paper/600/400"
+    },
+    {
+      "id": 3,
+      "titulo": "Dispensadores automáticos touchless",
+      "resumen": "Nuevos modelos para baño y cocina profesional.",
+      "fecha": "2025-09-28",
+      "enlace": "https://ejemplo.com/dispensadores",
+      "imagen": "https://picsum.photos/seed/dispenser/600/400"
+    }
+  ]
+  
