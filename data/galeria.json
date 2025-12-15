@@ -1,0 +1,7 @@
+[
+    { "titulo": "Lejía industrial",  "categoria": "Limpieza",      "thumb": "../img/lejia.png",            "full": "../img/lejia.png" },
+    { "titulo": "Jabón neutro 5L",   "categoria": "Limpieza",      "thumb": "../img/jabon-neutro.png",     "full": "../img/jabon-neutro.png" },
+    { "titulo": "Toalla secamanos",  "categoria": "Papelería",     "thumb": "../img/toalla-secamanos.png", "full": "../img/toalla-secamanos.png" },
+    { "titulo": "Dispensador gel",   "categoria": "Dispensadores", "thumb": "../img/logo.png",             "full": "../img/logo.png" }
+  ]
+  

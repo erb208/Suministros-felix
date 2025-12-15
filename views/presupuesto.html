@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SUMINISTROS FELIX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR fija -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../img/logo.png" alt="Logo Suministros Félix" width="55" height="55" class="me-2">
+        SUMINISTROS FELIX
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link" href="suministros.html">SUMINISTROS</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="presupuesto.html">PRESUPUESTO</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
+        </ul>
+
+        <!-- Buscador -->
+        <form id="navSearchForm" class="d-flex ms-lg-3" role="search">
+          <input id="navSearchInput" class="form-control me-2" type="search" placeholder="BUSCAR" aria-label="BUSCAR">
+          <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="py-5 bg-light">
+    <div class="container">
+      <h1 class="display-6 fw-bold mb-2">Solicitud de presupuesto</h1>
+      <p class="text-muted mb-0">Rellena tus datos y elige el producto, plazo y extras. El total se recalcula automáticamente.</p>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <form id="formPresupuesto" novalidate>
+
+        <!-- DATOS -->
+        <section class="mb-4">
+          <h2 class="h4 mb-3">1) Datos de contacto</h2>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre *</label>
+              <input type="text" id="nombre" class="form-control" maxlength="15" placeholder="Tu nombre" required>
+              <div class="invalid-feedback">Solo letras (máx. 15).</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="apellidos" class="form-label">Apellidos *</label>
+              <input type="text" id="apellidos" class="form-control" maxlength="40" placeholder="Tus apellidos" required>
+              <div class="invalid-feedback">Solo letras (máx. 40).</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="telefono" class="form-label">Teléfono *</label>
+              <input type="tel" id="telefono" class="form-control" maxlength="9" placeholder="Ej: 612345678" required>
+              <div class="invalid-feedback">9 dígitos numéricos.</div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Correo electrónico *</label>
+              <input type="email" id="email" class="form-control" placeholder="ej: nombre@dominio.com" required>
+              <div class="invalid-feedback">Correo válido requerido.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRESUPUESTO -->
+        <section class="mb-4">
+          <h2 class="h4 mb-3">2) Configuración del presupuesto</h2>
+
+          <!-- Producto -->
+          <div class="mb-3">
+            <label for="producto" class="form-label">Producto *</label>
+            <select id="producto" class="form-select" required>
+              <option value="" selected disabled>Elige un producto</option>
+              <option value="29.90">Lejía industrial (5L) — 29,90€</option>
+              <option value="15.50">Jabón neutro (5L) — 15,50€</option>
+              <option value="24.00">Toalla secamanos (caja) — 24,00€</option>
+            </select>
+            <div class="invalid-feedback">Selecciona un producto.</div>
+          </div>
+
+          <!-- Plazo -->
+          <div class="row g-3 mb-3">
+            <div class="col-md-6">
+              <label for="plazo" class="form-label">Plazo de entrega *</label>
+              <input type="number" id="plazo" class="form-control" min="1" max="36" value="1" required>
+              <div class="form-text">Según el valor, se aplica descuento automático.</div>
+              <div class="invalid-feedback">Introduce un número válido (1–36).</div>
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label">Descuento aplicado</label>
+              <input type="text" id="descuentoLabel" class="form-control" value="0%" readonly>
+            </div>
+          </div>
+
+          <!-- Extras -->
+          <div class="mb-3">
+            <label class="form-label d-block">Extras opcionales</label>
+            <div class="row g-2">
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="extraEnvio" value="6.90">
+                  <label class="form-check-label" for="extraEnvio">Envío 24h (+6,90€)</label>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="extraInstal" value="14.90">
+                  <label class="form-check-label" for="extraInstal">Instalación (+14,90€)</label>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="extraGarant" value="9.90">
+                  <label class="form-check-label" for="extraGarant">Garantía ampliada (+9,90€)</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Totales -->
+          <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+              <label class="form-label">Subtotal</label>
+              <input type="text" id="subtotal" class="form-control" value="0,00 €" readonly>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Total con descuento</label>
+              <input type="text" id="total" class="form-control fw-bold" value="0,00 €" readonly>
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label">Observaciones</label>
+              <input type="text" id="obs" class="form-control" placeholder="(opcional)">
+            </div>
+          </div>
+        </section>
+
+        <!-- CONDICIONES -->
+        <section class="mb-4">
+          <h2 class="visually-hidden">Formulario de presupuesto</h2>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="chkPrivacidad" required>
+            <label class="form-check-label" for="chkPrivacidad">
+              Acepto la <a href="#" class="link-underline">política de privacidad</a>.
+            </label>
+            <div class="invalid-feedback">Debes aceptar las condiciones para enviar.</div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary">Enviar presupuesto</button>
+            <button type="reset" class="btn btn-outline-secondary">Reiniciar</button>
+          </div>
+        </section>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer py-4">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h5 class="footer-title">Suministros Félix</h5>
+          <p class="footer-text">Suministros para hostelería y limpieza en Bilbao.</p>
+          <p class="mb-1">📍 Polígono Industrial Sangroniz, C/Iberre Bloque 10 - Nave 10</p>
+          <p class="mb-1">📞 <a class="footer-link" href="tel:+34655724482">+34 655 724 482</a> ·
+            <a class="footer-link" href="tel:+34944710281">94 471 0281</a></p>
+          <p class="mb-1">✉️ <a class="footer-link" href="mailto:info@suministrosfelix.com">info@suministrosfelix.com</a></p>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column align-items-md-end align-items-center">
+          <h5 class="footer-title">Síguenos en nuestras redes</h5>
+          <div class="d-flex gap-3 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../img/facebook.png" alt="Facebook" class="footer-social"></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener"><img src="../img/instagram.png" alt="Instagram" class="footer-social"></a>
+            <a href="https://wa.me/34655724482" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp" class="footer-social"></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener"><img src="../img/tiktok.png" alt="Tiktok" class="footer-social"></a>
+            <a href="https://gmail.com" target="_blank" rel="noopener"><img src="../img/email.png" alt="Email" class="footer-social"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <small class="footer-copy">© 2025 Suministros Félix — Todos los derechos reservados</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/active-nav.js"></script>
+  <script src="../js/nav-search.js"></script>
+  <script src="../js/presupuesto.js"></script>
+
+</body>
+</html>
